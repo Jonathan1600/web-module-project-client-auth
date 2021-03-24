@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .App {
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-logo {
@@ -26,6 +28,61 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.textField {
+  margin: 10px !important;
+  margin-bottom: 5px !important;
+}
+
+#age {
+  min-width: 100px;
+}
+
+#submit {
+  margin: 20px 0 200px 0;
+}
+
+#submitLogin {
+  margin: 10px !important;
+}
+
+.errors {
+  color: rgb(255, 0, 0);
+}
+
+.friendsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* root {
+  flexGrow: 1,
+} */
+
+ .menuButton {
+  margin-right: 20px;
+}
+
+ .navTitle {
+  flex-grow: 1;
+  left: 10px;
+  text-align: left;
+}
+
+.friend {
+  padding: 10px;
+  border-bottom: 2px dashed #000000;
+  width: 35%;
+}
+
+
+.newFriend {
+  margin-top: 15%;
+  ;
 }
 
 @keyframes App-logo-spin {

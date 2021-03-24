@@ -13,6 +13,8 @@ const initialCredentials = {
 const Login = () => {
 
     const [loginCredentials, setLoginCredentials] = useState(initialCredentials);
+    const [error, setErrors] = useState(null);
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setLoginCredentials({
@@ -42,12 +44,15 @@ const Login = () => {
             })
             .catch((err) => {
                 console.log(err.response);
+                setErrors(err.response.data.error)
             });
 
     };
 
     return (
         <form className="form container" onSubmit={onSubmit}>
+            <h2>Please Log In To Proceed</h2>
+            <h4>Hint: Username: Username, Password: password</h4>
             <TextField
                 className="textField"
                 id="outlined-basic"
@@ -74,7 +79,7 @@ const Login = () => {
             <div className="container">
                 <Button
                     type="submit"
-                    className="submit"
+                    id="submitLogin"
                     value="submit"
                     variant="contained"
                     color="primary"
@@ -83,6 +88,9 @@ const Login = () => {
                 >
                     Submit
         </Button>
+                <div className="errors">
+                    <div>{error}</div>
+                </div>
             </div>
         </form>
     );

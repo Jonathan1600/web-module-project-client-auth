@@ -18,7 +18,7 @@ let options = [];
 
 for (let i = 0; i < 100; i++) {
     options.push(
-        <MenuItem key={i} value={i}>{" " + i}</MenuItem>
+        <MenuItem key={i} value={i}>{i}</MenuItem>
     )
 }
 
@@ -65,8 +65,8 @@ const NewFriend = (props) => {
                     label="Email"
                     variant="outlined"
                     size="small"
-                />
-                <FormControl>
+                /><br />
+                <FormControl id="age">
 
                     <InputLabel id="demo-simple-select-label">Age</InputLabel>
                     <Select
@@ -81,6 +81,7 @@ const NewFriend = (props) => {
                 </FormControl>
                 <div className="container">
                     <Button
+                        id="submit"
                         type="submit"
                         className="submit"
                         value="submit"
