@@ -62,7 +62,7 @@ function authenticator(req, res, next) {
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === 'Lambda School' && password === 'i<3Lambd4') {
+  if (username === 'Username' && password === 'password') {
     req.loggedIn = true;
     res.status(200).json({
       payload: token
@@ -124,6 +124,14 @@ app.delete('/api/friends/:id', authenticator, (req, res) => {
 
   res.send(friends);
 });
+
+app.post("/api/logout", (req, res) => {
+  //remove token from database
+  res.status(200).json({
+    payload: token
+  });
+});
+
 
 function getNextId() {
   return nextId++;
